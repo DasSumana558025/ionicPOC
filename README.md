@@ -9,7 +9,7 @@ Clone this repo
 $ git clone https://github.com/DasSumana558025/ionicPOC.git
 ```
 
-cd into the githubionic folder run npm install
+cd into the ionicPOC folder run npm install
 ```bash
 $ npm install
 ```
