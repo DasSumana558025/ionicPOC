@@ -7,5 +7,25 @@
 </ion-header>
 
 <ion-content padding>
-
+ <table class="table table-striped">
+      
+        <thead>
+          <tr>
+            <th>Topic</th>
+            <th>Presenter</th>
+            <th>Time-Slot</th>
+            <th>Room No</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let session of alltopics">
+        <td>{{session.description}} </td>
+        <td>{{session.name}}</td>
+        <td>{{session.timeSlot}}</td>
+        <td>{{session.roomNumber}}</td>
+        </tr>
+        </tbody>
+        
+    </table>
+               
 </ion-content>
