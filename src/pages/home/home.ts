@@ -12,10 +12,12 @@ export class HomePage{
   employess : any = [];
   constructor(public navCtrl: NavController,public apiProvider: ApiProvider) {
     this.employess = this.apiProvider.getEmployees();
+    console.log(this.employess);
   }
 
   onSubmit()
   {
+    
     console.log(this.employess);
     console.log(this.model);
   }
