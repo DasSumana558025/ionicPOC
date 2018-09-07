@@ -1,6 +1,6 @@
 import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
-import 'rxjs/add/operator/map';
+import {Observable} from 'rxjs/Observable'
 
 /*
   Generated class for the ApiProvider provider.
@@ -16,9 +16,33 @@ export class ApiProvider {
   }
 
   getEmployees() {
-    this.http.get('assets/products.json').subscribe(data => {
+    this.http.get('assets/product.json').subscribe(data => {
       console.log(data);
     })
   }
 
+  getAllTopics() : Observable<any> {
+    return this.http.get('assets/allPresenters.json');
+  }
+
+  getFeedbacks() : Observable<any> {
+    return this.http.get('assets/feedback.json');
+  }
+
+}
+interface Alltopics {
+  id: number;
+  name: string;
+  description: string;
+  roomNumber: string;
+  timeSlot: string;
+}
+
+interface AllFeedback {
+  id : number;
+  session : number;
+  description: string;
+  sessionId : number;
+  sessionName :string;
+  questionDescription :any;
 }

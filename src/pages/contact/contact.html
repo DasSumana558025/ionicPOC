@@ -1,17 +1,37 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Contact
+      Feedback
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
   <ion-list>
-    <ion-list-header>Follow us on Twitter</ion-list-header>
-    <ion-item>
-      <ion-icon name="ionic" item-start></ion-icon>
-      @ionicframework
-    </ion-item>
+           
+          <div class="panel widget light-widget panel-bd-top vd_bdt-blue"  *ngFor="let session of allFeedback">
+            <div id="anchor{{session.sessionId}}"  class="panel-heading pd-5">
+                <a >
+                    <h5 class="mgbt-xs-5"> {{session.description}}</h5>
+                </a>
+            </div>
+            <div class="panel-body  pd-5">
+                <div class="content-list menu-action-right pd-0 ">
+                    <div>
+                        <ul class="list-wrapper pd-0">
+                            <li style="    list-style-type: none;" class="pd-0"  *ngFor="let question of session.questionOptions">
+                                <div class="menu-action">
+                                     <input type="radio" name="options"  value="question.optionId"
+                                    [checked]="question === question.optionId">  {{question.value}} 
+
+                                    
+                                </div>
+                            </li>
+                         </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+ 
   </ion-list>
 </ion-content>
