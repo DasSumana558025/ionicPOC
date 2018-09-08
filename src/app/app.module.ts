@@ -11,6 +11,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ApiProvider } from '../providers/api/api';
+import { FilterPipe} from './filter.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ApiProvider } from '../providers/api/api';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    FilterPipe 
   ],
   imports: [
     BrowserModule,FormsModule,HttpModule,
@@ -36,7 +38,8 @@ import { ApiProvider } from '../providers/api/api';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    ApiProvider
+    ApiProvider,
+    FilterPipe 
   ]
 })
 export class AppModule {}
